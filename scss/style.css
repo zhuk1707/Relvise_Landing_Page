@@ -1,3 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header .header__container .header__logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+.header .header__container .header__menu .menu__list .menu__item .menu__link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+body {
+  color: #737373;
+}
+
+/*wrapper*/
+.wrapper {
+  min-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/*container*/
+._container {
+  max-width: 1106px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/*Header*/
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header .header__container {
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  .header .header__container {
+    min-height: 70px;
+  }
+}
+.header .header__container .header__logo {
+  color: #252B42;
+  text-decoration: 0;
+  transition: color 0.2s ease;
+}
+.header .header__container .header__logo:hover, .header .header__container .header__logo:focus {
+  color: #737373;
+}
+.header .header__container .menu {
+  padding: 5px 0;
+}
+.header .header__container .header__menu {
+  margin: 0 0 0 132px;
+}
+@media screen and (max-width: 768px) {
+  .header .header__container .header__menu {
+    margin: 0 0 0 40px;
+  }
+}
+.header .header__container .header__menu .menu__list .menu__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 20px;
+}
+.header .header__container .header__menu .menu__list .menu__item .menu__link {
+  text-decoration: 0;
+  color: #737373;
+  transition: color 0.2s ease;
+}
+@media screen and (max-width: 425px) {
+  .header .header__container .header__menu .menu__list .menu__item .menu__link {
+    font-size: 16px;
+  }
+}
+.header .header__container .header__menu .menu__list .menu__item .menu__link:hover, .header .header__container .header__menu .menu__list .menu__item .menu__link:focus {
+  color: #252B42;
+}
 
 /*# sourceMappingURL=style.css.map */
