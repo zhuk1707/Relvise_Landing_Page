@@ -33,6 +33,7 @@ p {
 body {
   @extend %paragraph;
   color: $second-text-color;
+  background-color: #fafafa;
   height: 100%;
 }
 
@@ -143,7 +144,9 @@ body {
   flex: 1 1 auto;
 
   .page__main-block {
+  }
 
+  .page__services {
   }
 }
 
@@ -257,24 +260,72 @@ body {
 }
 
 /*Services*/
-.page__services.services {
-  .services__container._container {
+.services {
+  .services__container {
     .services__body {
+      display: flex;
+      margin: 0 -15px;
+
       .services__column {
-        .services__item.item-service {
-          .item-service__icon {}
-          h3.item-service__title {}
-          p.item-service__text {}
+        padding: 0 15px;
+        flex: 0 1 33.333%;
+
+        //flex-wrap: wrap;
+
+        .item-service {
+          & > *:not(:last-child) {
+            padding-bottom: 10px;
+          }
         }
-        .services__item.item-service {
-          .item-service__icon {}
-          h3.item-service__title {}
-          p.item-service__text {}
-        }
-        .services__item.item-service {
-          .item-service__icon {}
-          h3.item-service__title {}
-          p.item-service__text {}
+
+        .services__item {
+          padding: 35px 40px;
+          background-color: #ffffff;
+          box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+
+          transition: .2s ease;
+          &:hover {
+            background-color: $secondary-color-1;
+
+            .item-service__icon {
+              .item-service_white {
+                display: block;
+              }
+
+              .item-service_blue {
+                display: none;
+              }
+            }
+
+            .item-service__title {
+              color: $light-text-color;
+            }
+
+            .item-service__text {
+              color: $light-text-color;
+            }
+
+          }
+
+          .item-service__icon {
+            height: 48px;
+
+            .item-service_white {
+              display: none;
+            }
+
+            .item-service_blue {
+
+            }
+          }
+
+          .item-service__title {
+            color: $text-color;
+          }
+
+          .item-service__text {
+
+          }
         }
       }
     }
