@@ -30,6 +30,7 @@ p {
   @extend %paragraph;
 }
 
+html,
 body {
   @extend %paragraph;
   color: $second-text-color;
@@ -107,12 +108,13 @@ body {
       }
 
       .menu__list {
+        display: flex;
+        flex-wrap: wrap;
 
         .menu__item {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row;
-          column-gap: 20px;
+          *:not(:last-child) {
+            margin: 0 20px 0 0;
+          }
 
           .menu__link {
             @extend %link;
@@ -128,6 +130,7 @@ body {
 
             &:hover, &:focus {
               color: $text_color;
+              border-bottom: 2px solid $text-color;
               @media screen and (max-width: 450px) {
                 color: $second_text_color;
               }
@@ -147,6 +150,9 @@ body {
   }
 
   .page__services {
+    position: relative;
+    z-index: 3;
+    margin: -111px 0 0 0;
   }
 }
 
@@ -157,7 +163,9 @@ body {
   .main-block__container {
     .main-block__body {
       padding: 184px 0 191px 0;
-      max-width: 509px;
+      position: relative;
+      z-index: 2;
+      max-width: 400px;
 
       @media screen and (max-width: 990px) {
         padding: 120px 0 191px 0;
@@ -213,12 +221,12 @@ body {
 
           &:hover, &:focus {
             opacity: .9;
-            transform: translate3d(0,-2px, 0);
+            transform: translate3d(0,-4px, 0);
           }
 
           &:active {
             opacity: 1;
-            transform: translate3d(0,2px, 0);
+            transform: translate3d(0,4px, 0);
           }
 
           @media screen and (max-width: 450px) {
@@ -231,7 +239,8 @@ body {
           border: 1px solid $secondary-color-1;
 
           &:hover, &:focus {
-
+            background-color: $secondary-color-1;
+            color: #FFFFFF;
           }
         }
       }
@@ -244,8 +253,6 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -5;
-
 
     & img {
       @media screen and (max-width: 1300px) {
@@ -263,27 +270,38 @@ body {
 .services {
   .services__container {
     .services__body {
-      display: flex;
-      margin: 0 -15px;
+      @media (min-width: 770px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px -30px;
+      }
 
       .services__column {
-        padding: 0 15px;
+        padding: 0 15px 30px;
         flex: 0 1 33.333%;
 
-        //flex-wrap: wrap;
+        @media (max-width: 990px) {
+          flex: 0 1 50%;
 
+          &:last-child {
+            flex: 0 1 100%;
+          }
+        }
         .item-service {
-          & > *:not(:last-child) {
+          *:not(:last-child) {
             padding-bottom: 10px;
           }
         }
 
         .services__item {
-          padding: 35px 40px;
+          height: 100%;
+          padding: 40px;
           background-color: #ffffff;
           box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
 
           transition: .2s ease;
+
+
           &:hover {
             background-color: $secondary-color-1;
 
@@ -321,10 +339,16 @@ body {
 
           .item-service__title {
             color: $text-color;
+
+            @media (max-width: 450px) {
+              font-size: 20px;
+            }
           }
 
           .item-service__text {
-
+            @media (max-width: 450px) {
+              font-size: 12px;
+            }
           }
         }
       }
