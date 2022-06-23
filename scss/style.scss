@@ -38,7 +38,7 @@ body {
   height: 100%;
 }
 
-/*Wrapper*/
+/*Wrapper======================================================*/
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -47,28 +47,30 @@ body {
   flex-direction: column;
 }
 
-/*Container*/
+/*Container======================================================*/
 ._container {
   max-width: 1046+30+30px;
   margin: 0 auto;
   padding: 0 30px;
 }
 
-/**/
+/*Images Container======================================================*/
 ._ibg {
   position: relative;
+
+  & img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
 }
 
-._ibg img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-}
 
-/*Header*/
+
+/*Header======================================================*/
 .header {
   position: absolute;
   width: 100%;
@@ -142,25 +144,48 @@ body {
   }
 }
 
-/*Page*/
+/*Page======================================================*/
 .page {
   flex: 1 1 auto;
 
-  .page__main-block {
+  &__main-block {
   }
 
-  .page__services {
+  &__services {
     position: relative;
     z-index: 3;
     margin: -111px 0 0 0;
   }
+
+  &__advantages {
+
+  }
 }
 
-/*Main Block*/
+/*Header Block======================================================*/
+.header-block {
+  text-align: center;
+
+  & > *:not(:last-child) {
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    color: $text-color;
+
+  }
+
+  &__text {
+    color: $second-text-color;
+
+  }
+}
+
+/*Main Block======================================================*/
 .main-block {
   position: relative;
 
-  .main-block__container {
+  &__container {
     .main-block__body {
       padding: 184px 0 191px 0;
       position: relative;
@@ -266,9 +291,9 @@ body {
   }
 }
 
-/*Services*/
+/*Services======================================================*/
 .services {
-  .services__container {
+  &__container {
     .services__body {
       @media (min-width: 770px) {
         display: flex;
@@ -298,6 +323,7 @@ body {
           padding: 40px;
           background-color: #ffffff;
           box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+          border-radius: 30px;
 
           transition: .2s ease;
 
@@ -356,7 +382,56 @@ body {
   }
 }
 
+/*Advantages======================================================*/
+.advantages {
+  margin: 80px 0;
 
+  &__container {
 
+  }
 
-/*Footer*/
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  &__body {
+    display: flex;
+    margin: 0 -15px;
+  }
+
+  &__column {
+    padding: 0 15px;
+    flex: 0 1 25%;
+  }
+
+  &__item {
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.item-advantages {
+  & > *:not(:last-child) {
+    padding-bottom: 10px;
+  }
+
+  &__icon {
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__value {
+    color: $text-color;
+  }
+
+  &__text {
+    color: $second-text-color;
+
+  }
+}
+
+/*Footer======================================================*/
