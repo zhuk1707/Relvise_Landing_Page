@@ -214,6 +214,10 @@ body {
   z-index: 3;
   margin: -111px 0 0 0;
 }
+.page__who-we-are {
+  background-color: #FFFFFF;
+}
+
 /*Header Block======================================================*/
 .header-block {
   text-align: center;
@@ -330,66 +334,67 @@ body {
 
 /*Services======================================================*/
 @media (min-width: 770px) {
-  .services__container .services__body {
+  .services__body {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px -30px;
   }
 }
-.services__container .services__body .services__column {
-  padding: 0 15px 30px;
+.services__column {
+  padding: 0 15px;
+  margin: 0 0 30px 0;
   flex: 0 1 33.333%;
 }
 @media (max-width: 990px) {
-  .services__container .services__body .services__column {
+  .services__column {
     flex: 0 1 50%;
   }
-  .services__container .services__body .services__column:last-child {
+  .services__column:last-child {
     flex: 0 1 100%;
   }
 }
-.services__container .services__body .services__column .item-service *:not(:last-child) {
-  padding-bottom: 10px;
-}
-.services__container .services__body .services__column .services__item {
+.services__item {
   height: 100%;
-  padding: 40px;
+  padding: 30px 40px;
   background-color: #ffffff;
   box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
   border-radius: 30px;
   transition: 0.2s ease;
 }
-.services__container .services__body .services__column .services__item:hover {
+.services__item *:not(:last-child) {
+  padding-bottom: 10px;
+}
+.services__item:hover {
   background-color: #0D5C63;
 }
-.services__container .services__body .services__column .services__item:hover .item-service__icon .item-service_white {
+.services__item:hover .item-service__icon .item-service_white {
   display: block;
 }
-.services__container .services__body .services__column .services__item:hover .item-service__icon .item-service_blue {
+.services__item:hover .item-service__icon .item-service_blue {
   display: none;
 }
-.services__container .services__body .services__column .services__item:hover .item-service__title {
+.services__item:hover .item-service__title {
   color: #FFFFFF;
 }
-.services__container .services__body .services__column .services__item:hover .item-service__text {
+.services__item:hover .item-service__text {
   color: #FFFFFF;
 }
-.services__container .services__body .services__column .services__item .item-service__icon {
+.services__item .item-service__icon {
   height: 48px;
 }
-.services__container .services__body .services__column .services__item .item-service__icon .item-service_white {
+.services__item .item-service__icon .item-service_white {
   display: none;
 }
-.services__container .services__body .services__column .services__item .item-service__title {
+.services__item .item-service__title {
   color: #252B42;
 }
 @media (max-width: 450px) {
-  .services__container .services__body .services__column .services__item .item-service__title {
+  .services__item .item-service__title {
     font-size: 20px;
   }
 }
 @media (max-width: 450px) {
-  .services__container .services__body .services__column .services__item .item-service__text {
+  .services__item .item-service__text {
     font-size: 12px;
   }
 }
@@ -398,16 +403,57 @@ body {
 .advantages {
   margin: 80px 0;
 }
+@media (max-width: 770px) {
+  .advantages {
+    margin: 40px 0;
+  }
+}
+.advantages .item-advantages__icon {
+  align-items: center;
+  justify-content: center;
+}
+.advantages .item-advantages__value {
+  color: #252B42;
+}
+@media (max-width: 600px) {
+  .advantages .item-advantages__value {
+    font-size: 32px;
+  }
+}
+.advantages .item-advantages__text {
+  color: #737373;
+}
+@media (max-width: 600px) {
+  .advantages .item-advantages__text {
+    font-size: 14px;
+  }
+}
 .advantages__header {
   margin-bottom: 50px;
 }
+@media (max-width: 770px) {
+  .advantages__header {
+    margin-bottom: 30px;
+  }
+}
 .advantages__body {
   display: flex;
-  margin: 0 -15px;
+  flex-wrap: wrap;
+  margin: 0 -15px -30px;
 }
 .advantages__column {
-  padding: 0 15px;
+  padding: 0 15px 30px;
   flex: 0 1 25%;
+}
+@media (max-width: 1100px) {
+  .advantages__column {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 600px) {
+  .advantages__column {
+    flex: 0 1 100%;
+  }
 }
 .advantages__item {
   background-color: #FFFFFF;
@@ -417,20 +463,82 @@ body {
   box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
 }
 
-.item-advantages > *:not(:last-child) {
-  padding-bottom: 10px;
+/*Practice======================================================*/
+.practice {
+  margin-bottom: 80px;
 }
-.item-advantages__icon {
-  align-items: center;
-  justify-content: center;
+@media (max-width: 770px) {
+  .practice {
+    margin-bottom: 40px;
+  }
 }
-.item-advantages__value {
-  color: #252B42;
+.practice__header {
+  margin-bottom: 50px;
 }
-.item-advantages__text {
-  color: #737373;
+@media (max-width: 770px) {
+  .practice__header {
+    margin-bottom: 30px;
+  }
+}
+.practice__body {
+  margin: 0 -15px -30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.practice__column {
+  padding: 0 15px 30px;
+  flex: 0 1 25%;
+}
+@media (max-width: 1100px) {
+  .practice__column {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 600px) {
+  .practice__column {
+    flex: 0 1 100%;
+  }
 }
 
+.item-practice {
+  background-color: #ffffff;
+  box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.item-practice__content {
+  flex: 1 1 auto;
+}
+.item-practice__content {
+  padding: 30px 40px;
+}
+.item-practice__content *:not(:last-child) {
+  padding-bottom: 10px;
+}
+.item-practice__link {
+  display: inline-block;
+}
+.item-practice__title {
+  color: #252B42;
+}
+.item-practice__title:hover {
+  color: #737373;
+}
+.item-practice__text {
+  color: #737373;
+}
+.item-practice__image {
+  display: block;
+  padding: 0 0 60% 0;
+  border-radius: 0 0 30px 30px;
+}
+.item-practice__image img {
+  border-radius: 0 0 30px 30px;
+}
+
+/*Who=we=are======================================================*/
 /*Footer======================================================*/
 
 /*# sourceMappingURL=style.css.map */
