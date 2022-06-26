@@ -913,5 +913,46 @@ body {
 }
 
 /*Footer======================================================*/
+/*Contacts======================================================*/
+.contacts {
+  background-color: #FFFFFF;
+}
+.contacts__body {
+  padding: 30px 0;
+}
+@media (min-width: 700px) {
+  .contacts__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+  }
+  .contacts__body .contacts__content {
+    margin-bottom: 0;
+  }
+}
+.contacts__content {
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+.contacts__content > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+.contacts__label {
+  color: #252B42;
+}
+.contacts__text {
+  color: #737373;
+}
+.contacts__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF7B47;
+  color: #FFFFFF;
+}
+
+/*Footer======================================================*/
+/*Copyright======================================================*/
 
 /*# sourceMappingURL=style.css.map */
