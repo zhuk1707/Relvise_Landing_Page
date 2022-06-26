@@ -175,6 +175,9 @@ body {
   &__subscribe:not(:last-child) {
     margin: 0 0 10px 0;
   }
+
+  &__get-in-touch {
+  }
 }
 
 /*Header Block======================================================*/
@@ -716,7 +719,7 @@ body {
 }
 
 
-/*Subscribe======================================================*/
+/*Subscribe=====================================================*/
 .subscribe {
   position: relative;
 
@@ -820,5 +823,177 @@ body {
     }
   }
 }
+
+/*button_rectangle=================================================*/
+.button {
+  &_rectangle {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    transition: .2s ease;
+
+    &:hover, &:focus {
+      opacity: .9;
+      transform: translate3d(0,-4px, 0);
+    }
+
+    &:active {
+      opacity: 1;
+      transform: translate3d(0,4px, 0);
+    }
+
+  }
+}
+
+/*Get=in=touch=================================================*/
+.get-in-touch {
+  margin: 80px 0;
+
+  @media (max-width: 770px) {
+    margin: 30px 0;
+
+  }
+
+
+  &_container {
+    margin: 0 30px;
+
+    @media (max-width: 770px) {
+      margin: 0 0;
+
+    }
+  }
+
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @media (max-width: 770px) {
+        margin: 30px;
+      }
+    }
+  }
+
+  &__column {
+    padding: 0 30px 30px;
+    @media (min-width: 992px) {
+      padding: 0 30px 30px;
+    }
+  }
+
+  &__items {
+    height: 100%;
+    justify-content: center;
+
+
+
+    @media (min-width: 992px) {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  &__item {
+    flex: 0 1 33.33%;
+    margin: 0 -15px;
+
+    @media (max-width: 770px) {
+      margin: 0 -30px 0;
+    }
+
+
+  }
+
+  &__emails {
+    text-align: center;
+  }
+
+  &__email {
+    color: $text-color;
+    @extend %h6;
+
+    &:hover, &:focus {
+      border-bottom: 1px solid $text-color;
+    }
+  }
+}
+
+.item-get-in-touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+  padding: 50px;
+
+  &>*:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 770px) {
+    padding: 30px;
+    
+  }
+
+  &_blue {
+    color: #FFFFFF;
+    background-color: $text-color;
+    padding: 80px 50px;
+
+    .item-get-in-touch__label {
+      color: $light-text-color;
+    }
+
+    .get-in-touch__email {
+      color: $light-text-color;
+
+      &:hover, &:focus {
+        border-bottom: 1px solid $light-text-color;
+      }
+    }
+
+    .item-get-in-touch__button {
+      border: 1px solid $light-text-color;
+      color: $light-text-color;
+      background-color: transparent;
+
+      &:hover, &:focus {
+        background-color: $light-text-color;
+        color: $text-color;
+      }
+    }
+  }
+
+  &__icon {
+  }
+
+  &__label {
+    color: $text-color;
+  }
+
+  &__button {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    background-color: $light-text-color;
+
+    &:hover, &:focus {
+      background-color: $primary-color;
+      color: $light-text-color;
+    }
+  }
+
+
+}
+
+
+
+
+
 
 /*Footer======================================================*/
