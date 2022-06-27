@@ -48,7 +48,7 @@ h2 {
   letter-spacing: 0.2px;
 }
 
-.header .header__container .header__logo, h3 {
+.header__logo, h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 24px;
@@ -97,7 +97,7 @@ body, p {
   letter-spacing: 0.2px;
 }
 
-.header .header__container .header__menu .menu__list .menu__item .menu__link {
+.menu__link {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -154,61 +154,80 @@ body {
   left: 0;
   z-index: 50;
 }
-.header .header__container {
+.header__container {
   display: flex;
   min-height: 104px;
   align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 425px) {
-  .header .header__container {
+  .header__container {
     min-height: 70px;
   }
 }
-.header .header__container .header__logo {
+.header__logo {
   color: #252B42;
   text-decoration: 0;
   transition: color 0.2s ease;
 }
-.header .header__container .header__logo:hover, .header .header__container .header__logo:focus {
+.header__logo:hover, .header__logo:focus {
   color: #737373;
 }
-.header .header__container .menu {
-  padding: 5px 0;
+.header__nav-btn {
+  display: none;
 }
-.header .header__container .header__menu {
-  margin: 0 0 0 132px;
-}
-@media screen and (max-width: 768px) {
-  .header .header__container .header__menu {
-    margin: 0 0 0 40px;
+@media (max-width: 990px) {
+  .header__nav-btn {
+    display: block;
   }
 }
-.header .header__container .header__menu .menu__list {
-  display: flex;
-  flex-wrap: wrap;
+
+.menu {
+  margin: 5px 0;
 }
-.header .header__container .header__menu .menu__list .menu__item *:not(:last-child) {
+.menu__list {
+  display: flex;
+}
+@media (max-width: 990px) {
+  .menu__list {
+    display: none;
+  }
+}
+.menu__item *:not(:last-child) {
   margin: 0 20px 0 0;
 }
-.header .header__container .header__menu .menu__list .menu__item .menu__link {
+.menu__link {
   text-decoration: 0;
-  color: #737373;
+  color: #17213C;
   transition: color 0.2s ease;
 }
 @media screen and (max-width: 450px) {
-  .header .header__container .header__menu .menu__list .menu__item .menu__link {
+  .menu__link {
     font-size: 16px;
-    color: #17213C;
+    color: #737373;
   }
 }
-.header .header__container .header__menu .menu__list .menu__item .menu__link:hover, .header .header__container .header__menu .menu__list .menu__item .menu__link:focus {
+.menu__link:hover, .menu__link:focus {
   color: #252B42;
   border-bottom: 2px solid #252B42;
 }
 @media screen and (max-width: 450px) {
-  .header .header__container .header__menu .menu__list .menu__item .menu__link:hover, .header .header__container .header__menu .menu__list .menu__item .menu__link:focus {
+  .menu__link:hover, .menu__link:focus {
     color: #737373;
   }
+}
+
+.nav-btn-header {
+  background-color: transparent;
+  transition: 0.2s ease;
+}
+.nav-btn-header:hover {
+  opacity: 0.6;
+}
+.nav-btn-header img {
+  height: 24px;
+  width: 24px;
+  display: flex;
 }
 
 /*Page======================================================*/
@@ -226,6 +245,7 @@ body {
 .page__subscribe:not(:last-child) {
   margin: 0 0 10px 0;
 }
+
 /*Header Block======================================================*/
 .header-block {
   text-align: center;
@@ -269,11 +289,7 @@ body {
 }
 .main-block__container .main-block__body .main-block__text {
   max-width: 380px;
-}
-@media (max-width: 990px) {
-  .main-block__container .main-block__body .main-block__text {
-    color: #17213C;
-  }
+  color: #17213C;
 }
 .main-block__container .main-block__body .main-block__buttons {
   display: flex;
@@ -293,6 +309,7 @@ body {
   border-radius: 37px;
   text-decoration: 0;
   margin: 10px 0;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 @media (min-width: 450px) {
@@ -328,18 +345,13 @@ body {
   height: 100%;
   top: 0;
   left: 0;
+  opacity: 0.6;
 }
 @media screen and (max-width: 1300px) {
   .main-block .main-block__image img {
     object-position: right;
   }
 }
-@media screen and (max-width: 990px) {
-  .main-block .main-block__image img {
-    opacity: 0.5;
-  }
-}
-
 /*Services======================================================*/
 @media (min-width: 770px) {
   .services__body {
@@ -379,6 +391,7 @@ body {
   padding-bottom: 10px;
 }
 .services__item:hover {
+  cursor: pointer;
   background-color: #0D5C63;
 }
 .services__item:hover .item-service__icon .item-service_white {
@@ -767,6 +780,7 @@ body {
   text-align: center;
   border-radius: 0 20px 20px 0;
   padding: 15px 22px;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 .subscribe__button:hover {

@@ -84,69 +84,93 @@ body {
   left: 0;
   z-index: 50;
 
-  .header__container {
+  &__container {
     display: flex;
     min-height: 104px;
     align-items: center;
+    justify-content: space-between;
 
     @media screen and (max-width: 425px) {
       min-height: 70px;
     }
+  }
 
-    .header__logo {
-      @extend %h3;
+  &__logo {
+    @extend %h3;
+    color: $text_color;
+    text-decoration: 0;
+
+    transition: color .2s ease;
+    &:hover, &:focus{
+      color: $second_text_color;
+    }
+  }
+
+  &__menu{
+    //margin: 0 0 0 132px;
+  }
+
+  &__nav-btn {
+    display: none;
+    @media (max-width: 990px) {
+      display: block;
+    }
+  }
+}
+
+.menu {
+  margin: 5px 0;
+
+  &__list {
+    display: flex;
+    //flex-wrap: wrap;
+
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    *:not(:last-child) {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  &__link {
+    @extend %link;
+    text-decoration: 0;
+    color: $secondary-color-2;
+
+    @media screen and (max-width: 450px) {
+      font-size: 16px;
+      color: $second_text_color;
+    }
+
+    transition: color .2s ease;
+
+    &:hover, &:focus {
       color: $text_color;
-      text-decoration: 0;
-
-      transition: color .2s ease;
-
-      &:hover, &:focus{
+      border-bottom: 2px solid $text-color;
+      @media screen and (max-width: 450px) {
         color: $second_text_color;
       }
     }
+  }
+}
 
-    .menu {
-      padding: 5px 0;
-    }
+.nav-btn-header {
+  background-color: transparent;
 
-    .header__menu{
-      margin: 0 0 0 132px;
-      @media screen and (max-width: 768px) {
-        margin: 0 0 0 40px;
-      }
 
-      .menu__list {
-        display: flex;
-        flex-wrap: wrap;
+  transition: .2s ease;
+  &:hover {
+    opacity: .6;
+  }
 
-        .menu__item {
-          *:not(:last-child) {
-            margin: 0 20px 0 0;
-          }
-
-          .menu__link {
-            @extend %link;
-            text-decoration: 0;
-            color: $second_text_color;
-
-            @media screen and (max-width: 450px) {
-              font-size: 16px;
-              color: $secondary-color-2;
-            }
-
-            transition: color .2s ease;
-
-            &:hover, &:focus {
-              color: $text_color;
-              border-bottom: 2px solid $text-color;
-              @media screen and (max-width: 450px) {
-                color: $second_text_color;
-              }
-            }
-          }
-        }
-      }
-    }
+  img {
+    height: 24px;
+    width: 24px;
+    display: flex
   }
 }
 
@@ -155,19 +179,10 @@ body {
 .page {
   flex: 1 1 auto;
 
-  &__main-block {
-  }
-
   &__services {
     position: relative;
     z-index: 3;
     margin: -111px 0 0 0;
-  }
-
-  &__advantages {
-  }
-
-  &__practice {
   }
 
   &__who-we-are {
@@ -179,18 +194,6 @@ body {
 
   &__subscribe:not(:last-child) {
     margin: 0 0 10px 0;
-  }
-
-  &__get-in-touch {
-  }
-
-  &__contacts {
-  }
-
-  &__footer {
-  }
-
-  &__copyright {
   }
 }
 
@@ -244,10 +247,7 @@ body {
       }
       .main-block__text {
         max-width: 380px;
-
-        @media (max-width: 990px) {
-          color: $secondary-color-2;
-        }
+        color: $secondary-color-2;
       }
       .main-block__buttons {
         display: flex;
@@ -268,6 +268,7 @@ body {
           border-radius: 37px;
           text-decoration: 0;
           margin: 10px 0;
+          cursor: pointer;
 
           transition: all .2s ease;
 
@@ -311,6 +312,8 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    opacity: .6;
+
 
     & img {
       @media screen and (max-width: 1300px) {
@@ -318,7 +321,6 @@ body {
       }
 
       @media screen and (max-width: 990px) {
-        opacity: .5;
       }
     }
   }
@@ -372,6 +374,8 @@ body {
     }
 
     &:hover {
+      cursor: pointer;
+
       background-color: $secondary-color-1;
 
       .item-service__icon {
@@ -832,6 +836,8 @@ body {
     text-align: center;
     border-radius: 0 20px 20px 0;
     padding: 15px 22px;
+    cursor: pointer;
+
 
     transition: .2s ease;
     &:hover {
